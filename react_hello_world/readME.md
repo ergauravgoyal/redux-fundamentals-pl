@@ -1,0 +1,1 @@
+ node_modules/.bin/babel --plugins transform-react-jsx js/example1.jsx
