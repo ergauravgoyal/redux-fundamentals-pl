@@ -1,7 +1,5 @@
 import React from "react";
-import { createStore } from "redux";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
 import axios from "axios";
 import debounce from "lodash.debounce";
 import FeesTable from "../components/FeesTable";
@@ -10,7 +8,7 @@ class Conversion extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //originAmount: "0.00",
+      // originAmount: '0.00',
       originCurrency: "USD",
       destinationAmount: "0.00",
       destinationCurrency: "EUR",
@@ -79,8 +77,8 @@ class Conversion extends React.Component {
         this.clearErrorMessage();
 
         this.setState({
-          //originAmount: resp.originAmount,
-          destinationAmount: resp.destAmount,
+          originAmount: resp.originAmount,
+          // destinationAmount: resp.destAmount,
           destinationAmount: this.state.destinationAmount,
           conversionRate: resp.xRate
         });
@@ -110,12 +108,13 @@ class Conversion extends React.Component {
     // remove unallowed chars
     newAmount = newAmount.replace(",", "");
 
-    this.props.dispatch({
-      type: "CHANGE_ORGIN_AMOUNT",
-      data: newAmount
-    });
     // optimistic field updates
-    // this.setState({ originAmount: newAmount });
+    this.props.dispatch({
+      type: "CHANGE_ORIGIN_AMOUNT",
+      data: { newAmount: newAmount }
+    });
+    //optimistic field updates
+    // this.setState({originAmount: newAmount});
 
     // get the new dest amount
     this.makeConversionAjaxCall(
