@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 108);
+/******/ 	return __webpack_require__(__webpack_require__.s = 106);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -875,33 +875,6 @@ module.exports = warning;
 
 /***/ }),
 /* 8 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1001,7 +974,7 @@ module.exports = defaults;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1040,7 +1013,7 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1059,7 +1032,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1087,7 +1060,7 @@ function warning(message) {
 }
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1103,6 +1076,33 @@ function warning(message) {
 var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
 
 
 /***/ }),
@@ -1693,7 +1693,7 @@ module.exports = ReactPropTypesSecret;
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(11);
+  var ReactPropTypesSecret = __webpack_require__(10);
   var loggedTypeFailures = {};
 
   printWarning = function(text) {
@@ -2207,7 +2207,7 @@ var storeShape = __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.shape({
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_es_isPlainObject__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__warning__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__warning__ = __webpack_require__(11);
 /* harmony export (immutable) */ __webpack_exports__["a"] = verifyPlainObject;
 
 
@@ -2259,7 +2259,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_symbol_observable__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_symbol_observable__ = __webpack_require__(103);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createStore", function() { return createStore; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "combineReducers", function() { return combineReducers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bindActionCreators", function() { return bindActionCreators; });
@@ -2876,11 +2876,11 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _reactRedux = __webpack_require__(29);
 
-var _configureStore = __webpack_require__(110);
+var _configureStore = __webpack_require__(55);
 
 var _configureStore2 = _interopRequireDefault(_configureStore);
 
-var _conversion = __webpack_require__(109);
+var _conversion = __webpack_require__(54);
 
 var _conversion2 = _interopRequireDefault(_conversion);
 
@@ -2937,7 +2937,7 @@ module.exports = __webpack_require__(36);
 var utils = __webpack_require__(1);
 var bind = __webpack_require__(18);
 var Axios = __webpack_require__(38);
-var defaults = __webpack_require__(9);
+var defaults = __webpack_require__(8);
 
 /**
  * Create an instance of Axios
@@ -3057,7 +3057,7 @@ module.exports = CancelToken;
 "use strict";
 
 
-var defaults = __webpack_require__(9);
+var defaults = __webpack_require__(8);
 var utils = __webpack_require__(1);
 var InterceptorManager = __webpack_require__(39);
 var dispatchRequest = __webpack_require__(40);
@@ -3212,7 +3212,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(1);
 var transformData = __webpack_require__(43);
 var isCancel = __webpack_require__(16);
-var defaults = __webpack_require__(9);
+var defaults = __webpack_require__(8);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -3896,8 +3896,405 @@ FeesTable.propTypes = {
 exports.default = FeesTable;
 
 /***/ }),
-/* 54 */,
-/* 55 */,
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(29);
+
+var _axios = __webpack_require__(35);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _lodash = __webpack_require__(76);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _FeesTable = __webpack_require__(53);
+
+var _FeesTable2 = _interopRequireDefault(_FeesTable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Conversion = function (_React$Component) {
+    _inherits(Conversion, _React$Component);
+
+    function Conversion(props) {
+        _classCallCheck(this, Conversion);
+
+        var _this = _possibleConstructorReturn(this, (Conversion.__proto__ || Object.getPrototypeOf(Conversion)).call(this, props));
+
+        _this.state = {
+            // originAmount: '0.00',
+            originCurrency: 'USD',
+            destinationAmount: '0.00',
+            destinationCurrency: 'EUR',
+            feeAmount: 0.00,
+            conversionRate: 1.5,
+            totalCost: 0.00,
+            errorMsg: ''
+
+            // bind event listeners so 'this' will be available in the handlers
+        };_this.handleOriginAmountChange = _this.handleOriginAmountChange.bind(_this);
+        _this.handleDestAmountChange = _this.handleDestAmountChange.bind(_this);
+        _this.handleOriginCurrencyChange = _this.handleCurrencyChange.bind(_this, 'origin');
+        _this.handleDestCurrencyChange = _this.handleCurrencyChange.bind(_this, 'destination');
+        _this.handleAjaxFailure = _this.handleAjaxFailure.bind(_this);
+        return _this;
+    }
+
+    _createClass(Conversion, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            // Add a debounced version of _getDestinationAmount() so we avoid server & UI Thrashing.
+            // See http://stackoverflow.com/questions/23123138/perform-debounce-in-react-js/28046731#28046731
+            this.makeConversionAjaxCall = (0, _lodash2.default)(this._makeConversionAjaxCall, 350);
+            this.makeFeeAjaxCall = (0, _lodash2.default)(this._makeFeeAjaxCall, 350);
+
+            this.originAmountInput.focus();
+        }
+        // we'll handle all failures the same
+
+    }, {
+        key: 'handleAjaxFailure',
+        value: function handleAjaxFailure(resp) {
+            var msg = 'Error. Please try again later.';
+
+            if (resp && resp.request && resp.request.status === 0) {
+                msg = 'Oh no! App appears to be offline.';
+            }
+
+            this.setState({
+                errorMsg: msg
+            });
+        }
+        // on success ensure no error message
+
+    }, {
+        key: 'clearErrorMessage',
+        value: function clearErrorMessage() {
+            if (this.state.errorMsg) {
+                this.setState({
+                    errorMsg: ''
+                });
+            }
+        }
+    }, {
+        key: 'handleCurrencyChange',
+        value: function handleCurrencyChange(currentlyEditing, event) {
+            var _this2 = this;
+
+            var obj = {};
+            if (currentlyEditing === 'origin') {
+                obj.originCurrency = event.target.value;
+            } else {
+                obj.destinationCurrency = event.target.value;
+            }
+
+            // just change both...
+            // we have to use the callback so `this.state` will reflect the proper values
+            // when they are called in _makeConversionAjaxCall()
+            this.setState(obj, function () {
+                // get new dest amount & conversion rates
+                _this2.makeConversionAjaxCall({}, function (resp) {
+                    _this2.clearErrorMessage();
+
+                    _this2.setState({
+                        originAmount: resp.originAmount,
+                        // destinationAmount: resp.destAmount,
+                        destinationAmount: _this2.state.destinationAmount,
+                        conversionRate: resp.xRate
+                    });
+
+                    // get the new fee & total amount
+                    _this2.makeFeeAjaxCall({
+                        originAmount: resp.originAmount,
+                        originCurrency: _this2.state.originCurrency,
+                        destCurrency: _this2.state.destinationCurrency
+
+                    }, function (response) {
+                        _this2.setState({
+                            feeAmount: response.feeAmount
+                        });
+
+                        _this2.calcNewTotal();
+                    }, _this2.handleAjaxFailure);
+                });
+            });
+        }
+    }, {
+        key: 'handleOriginAmountChange',
+        value: function handleOriginAmountChange(event) {
+            var _this3 = this;
+
+            var newAmount = event.target.value;
+
+            // remove unallowed chars
+            newAmount = newAmount.replace(',', '');
+
+            // optimistic field updates
+            this.props.dispatch({ type: "CHANGE_ORIGIN_AMOUNT", data: { newAmount: newAmount } });
+            // this.setState({originAmount: newAmount});
+
+            // get the new dest amount
+            this.makeConversionAjaxCall({
+                currentlyEditing: 'origin',
+                newValue: newAmount
+
+            }, function (resp) {
+                _this3.clearErrorMessage();
+
+                _this3.setState({
+                    conversionRate: resp.xRate,
+                    destinationAmount: resp.destAmount
+                });
+            }, this.handleAjaxFailure);
+
+            // get the new fee & total amount
+            this.makeFeeAjaxCall({
+                originAmount: newAmount,
+                originCurrency: this.state.originCurrency,
+                destCurrency: this.state.destinationCurrency
+
+            }, function (resp) {
+                _this3.setState({
+                    feeAmount: resp.feeAmount
+                });
+
+                _this3.calcNewTotal();
+            });
+        }
+    }, {
+        key: 'handleDestAmountChange',
+        value: function handleDestAmountChange(event) {
+            var _this4 = this;
+
+            var newAmount = event.target.value;
+
+            // remove unallowed chars
+            newAmount = newAmount.replace(',', '');
+            // optimistic update
+            this.setState({ destinationAmount: newAmount });
+
+            this.makeConversionAjaxCall({
+                currentlyEditing: 'dest',
+                newValue: newAmount
+
+            }, function (resp) {
+                // make ajax call to get the fee amount..
+                var newState = {
+                    conversionRate: resp.xRate,
+                    originAmount: resp.originAmount
+                };
+
+                _this4.setState(newState);
+
+                // get the new fee & total amount
+                _this4.makeFeeAjaxCall({
+                    originAmount: resp.originAmount,
+                    originCurrency: _this4.state.originCurrency,
+                    destCurrency: _this4.state.destinationCurrency
+
+                }, function (resp) {
+                    _this4.setState({
+                        feeAmount: resp.feeAmount
+                    });
+
+                    _this4.calcNewTotal();
+                }, _this4.handleAjaxFailure);
+            });
+        }
+        // this is debounced in `componentDidMount()` as this.makeConversionAjaxCall()
+
+    }, {
+        key: '_makeConversionAjaxCall',
+        value: function _makeConversionAjaxCall(data, successCallback, failureCallback) {
+            var originCurrency = this.state.originCurrency;
+            var destCurrency = this.state.destinationCurrency;
+
+            var payload = {
+                originAmount: data.newValue || this.props.originAmount,
+                destAmount: data.newValue || this.state.destAmount,
+                originCurrency: originCurrency,
+                destCurrency: destCurrency,
+                calcOriginAmount: false
+
+                // determine whether we need to calc origin or dest amount
+            };if (data.currentlyEditing === 'dest') {
+                payload.calcOriginAmount = true;
+            }
+
+            // ajax call for destination amount
+            // originCurrency, destCurrency, originAmount
+            _axios2.default.get('/api/conversion', {
+                params: payload
+            }).then(function (resp) {
+                successCallback(resp.data);
+            }).catch(failureCallback);
+        }
+        // this is debounced in `componentDidMount()`
+
+    }, {
+        key: '_makeFeeAjaxCall',
+        value: function _makeFeeAjaxCall(payload, successCallback, failureCallback) {
+            _axios2.default.get('/api/fees', {
+                params: payload
+            }).then(function (resp) {
+                successCallback(resp.data);
+            }).catch(failureCallback);
+        }
+    }, {
+        key: 'calcNewTotal',
+        value: function calcNewTotal() {
+            var newTotal = parseFloat(this.props.originAmount, 10) + parseFloat(this.state.feeAmount, 10);
+            this.setState({ totalCost: parseFloat(newTotal) });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this5 = this;
+
+            if (this.state.errorMsg) {
+                var errorMsg = _react2.default.createElement(
+                    'div',
+                    { className: 'errorMsg' },
+                    this.state.errorMsg
+                );
+            }
+
+            return _react2.default.createElement(
+                'div',
+                null,
+                errorMsg,
+                _react2.default.createElement(
+                    'label',
+                    null,
+                    'Convert'
+                ),
+                '\xA0',
+                _react2.default.createElement('input', { className: 'amount-field', ref: function ref(input) {
+                        return _this5.originAmountInput = input;
+                    }, onChange: this.handleOriginAmountChange, value: this.props.originAmount }),
+                _react2.default.createElement(
+                    'select',
+                    { value: this.state.originCurrency, onChange: this.handleOriginCurrencyChange },
+                    _react2.default.createElement(
+                        'option',
+                        { value: 'USD' },
+                        'USD'
+                    ),
+                    _react2.default.createElement(
+                        'option',
+                        { value: 'EUR' },
+                        'EUR'
+                    ),
+                    _react2.default.createElement(
+                        'option',
+                        { value: 'JPY' },
+                        'JPY'
+                    )
+                ),
+                'to ',
+                _react2.default.createElement('input', { className: 'amount-field', onChange: this.handleDestAmountChange, value: this.state.destinationAmount }),
+                '\xA0',
+                _react2.default.createElement(
+                    'select',
+                    { value: this.state.destinationCurrency, onChange: this.handleDestCurrencyChange },
+                    _react2.default.createElement(
+                        'option',
+                        { value: 'USD' },
+                        'USD'
+                    ),
+                    _react2.default.createElement(
+                        'option',
+                        { value: 'EUR' },
+                        'EUR'
+                    ),
+                    _react2.default.createElement(
+                        'option',
+                        { value: 'JPY' },
+                        'JPY'
+                    )
+                ),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement(_FeesTable2.default, {
+                    originCurrency: this.state.originCurrency,
+                    destinationCurrency: this.state.destinationCurrency,
+                    conversionRate: this.state.conversionRate,
+                    fee: this.state.feeAmount,
+                    total: this.state.totalCost
+                })
+            );
+        }
+    }]);
+
+    return Conversion;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRedux.connect)(function (state, props) {
+    return {
+        originAmount: state.originAmount
+    };
+})(Conversion);
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _redux = __webpack_require__(33);
+
+var defaultState = {
+    originAmount: '0.00'
+};
+
+function amount() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
+    var action = arguments[1];
+
+    console.log('state', state);
+    if (action.type === 'CHANGE_ORIGIN_AMOUNT') {
+        return _extends({}, state, {
+            originAmount: action.data.newAmount
+        });
+    }
+
+    return state;
+}
+
+var store = (0, _redux.createStore)(amount);
+
+exports.default = store;
+
+/***/ }),
 /* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4125,7 +4522,7 @@ module.exports = isTextNode;
 
 
 
-var ExecutionEnvironment = __webpack_require__(10);
+var ExecutionEnvironment = __webpack_require__(9);
 
 var performance;
 
@@ -4379,7 +4776,7 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 
 /* harmony default export */ __webpack_exports__["a"] = freeGlobal;
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(13)))
 
 /***/ }),
 /* 69 */
@@ -5007,7 +5404,7 @@ function toNumber(value) {
 
 module.exports = debounce;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
 
 /***/ }),
 /* 77 */
@@ -5685,7 +6082,7 @@ if (process.env.NODE_ENV !== "production") {
 
 var react = __webpack_require__(4);
 var invariant = __webpack_require__(3);
-var ExecutionEnvironment = __webpack_require__(10);
+var ExecutionEnvironment = __webpack_require__(9);
 var _assign = __webpack_require__(5);
 var EventListener = __webpack_require__(19);
 var require$$0 = __webpack_require__(7);
@@ -22906,7 +23303,7 @@ module.exports = ReactDOMFiberEntry;
  LICENSE file in the root directory of this source tree.
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(4);__webpack_require__(3);var l=__webpack_require__(10),n=__webpack_require__(5),ba=__webpack_require__(19),ca=__webpack_require__(2),da=__webpack_require__(6),ea=__webpack_require__(23),fa=__webpack_require__(20),ha=__webpack_require__(21),ia=__webpack_require__(22);
+var aa=__webpack_require__(4);__webpack_require__(3);var l=__webpack_require__(9),n=__webpack_require__(5),ba=__webpack_require__(19),ca=__webpack_require__(2),da=__webpack_require__(6),ea=__webpack_require__(23),fa=__webpack_require__(20),ha=__webpack_require__(21),ia=__webpack_require__(22);
 function w(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:w("227");
 function ja(a){switch(a){case "svg":return"http://www.w3.org/2000/svg";case "math":return"http://www.w3.org/1998/Math/MathML";default:return"http://www.w3.org/1999/xhtml"}}
 var ka={Namespaces:{html:"http://www.w3.org/1999/xhtml",mathml:"http://www.w3.org/1998/Math/MathML",svg:"http://www.w3.org/2000/svg"},getIntrinsicNamespace:ja,getChildNamespace:function(a,b){return null==a||"http://www.w3.org/1999/xhtml"===a?ja(b):"http://www.w3.org/2000/svg"===a&&"foreignObject"===b?"http://www.w3.org/1999/xhtml":a}},la=null,oa={};
@@ -23214,7 +23611,7 @@ if (process.env.NODE_ENV === 'production') {
 
 
 
-var ReactPropTypesSecret = __webpack_require__(11);
+var ReactPropTypesSecret = __webpack_require__(10);
 
 function emptyFunction() {}
 
@@ -23282,7 +23679,7 @@ module.exports = function() {
 
 var assign = __webpack_require__(5);
 
-var ReactPropTypesSecret = __webpack_require__(11);
+var ReactPropTypesSecret = __webpack_require__(10);
 var checkPropTypes = __webpack_require__(26);
 
 var printWarning = function() {};
@@ -23874,7 +24271,7 @@ if (process.env.NODE_ENV !== 'production') {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_PropTypes__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_warning__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_warning__ = __webpack_require__(11);
 /* harmony export (immutable) */ __webpack_exports__["b"] = createProvider;
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -24294,7 +24691,7 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_warning__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_warning__ = __webpack_require__(11);
 /* harmony export (immutable) */ __webpack_exports__["a"] = verifySubselectors;
 
 
@@ -24467,7 +24864,7 @@ function shallowEqual(objA, objB) {
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(13);
+  var ReactPropTypesSecret = __webpack_require__(12);
   var loggedTypeFailures = {};
 
   printWarning = function(text) {
@@ -24563,7 +24960,7 @@ module.exports = checkPropTypes;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(13);
+var ReactPropTypesSecret = __webpack_require__(12);
 
 function emptyFunction() {}
 
@@ -24631,7 +25028,7 @@ module.exports = function() {
 
 var assign = __webpack_require__(5);
 
-var ReactPropTypesSecret = __webpack_require__(13);
+var ReactPropTypesSecret = __webpack_require__(12);
 var checkPropTypes = __webpack_require__(96);
 
 var printWarning = function() {};
@@ -27033,13 +27430,11 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 103 */,
-/* 104 */,
-/* 105 */
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global, module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ponyfill_js__ = __webpack_require__(106);
+/* WEBPACK VAR INJECTION */(function(global, module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ponyfill_js__ = __webpack_require__(104);
 /* global window */
 
 
@@ -27060,10 +27455,10 @@ if (typeof self !== 'undefined') {
 var result = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__ponyfill_js__["a" /* default */])(root);
 /* harmony default export */ __webpack_exports__["a"] = result;
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(8), __webpack_require__(107)(module)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(13), __webpack_require__(105)(module)))
 
 /***/ }),
-/* 106 */
+/* 104 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27088,7 +27483,7 @@ function symbolObservablePonyfill(root) {
 
 
 /***/ }),
-/* 107 */
+/* 105 */
 /***/ (function(module, exports) {
 
 module.exports = function(originalModule) {
@@ -27118,410 +27513,11 @@ module.exports = function(originalModule) {
 
 
 /***/ }),
-/* 108 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(34);
 
-
-/***/ }),
-/* 109 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRedux = __webpack_require__(29);
-
-var _axios = __webpack_require__(35);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-var _lodash = __webpack_require__(76);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _FeesTable = __webpack_require__(53);
-
-var _FeesTable2 = _interopRequireDefault(_FeesTable);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Conversion = function (_React$Component) {
-    _inherits(Conversion, _React$Component);
-
-    function Conversion(props) {
-        _classCallCheck(this, Conversion);
-
-        var _this = _possibleConstructorReturn(this, (Conversion.__proto__ || Object.getPrototypeOf(Conversion)).call(this, props));
-
-        _this.state = {
-            // originAmount: '0.00',
-            originCurrency: 'USD',
-            destinationAmount: '0.00',
-            destinationCurrency: 'EUR',
-            feeAmount: 0.00,
-            conversionRate: 1.5,
-            totalCost: 0.00,
-            errorMsg: ''
-
-            // bind event listeners so 'this' will be available in the handlers
-        };_this.handleOriginAmountChange = _this.handleOriginAmountChange.bind(_this);
-        _this.handleDestAmountChange = _this.handleDestAmountChange.bind(_this);
-        _this.handleOriginCurrencyChange = _this.handleCurrencyChange.bind(_this, 'origin');
-        _this.handleDestCurrencyChange = _this.handleCurrencyChange.bind(_this, 'destination');
-        _this.handleAjaxFailure = _this.handleAjaxFailure.bind(_this);
-        return _this;
-    }
-
-    _createClass(Conversion, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            // Add a debounced version of _getDestinationAmount() so we avoid server & UI Thrashing.
-            // See http://stackoverflow.com/questions/23123138/perform-debounce-in-react-js/28046731#28046731
-            this.makeConversionAjaxCall = (0, _lodash2.default)(this._makeConversionAjaxCall, 350);
-            this.makeFeeAjaxCall = (0, _lodash2.default)(this._makeFeeAjaxCall, 350);
-
-            this.originAmountInput.focus();
-        }
-        // we'll handle all failures the same
-
-    }, {
-        key: 'handleAjaxFailure',
-        value: function handleAjaxFailure(resp) {
-            var msg = 'Error. Please try again later.';
-
-            if (resp && resp.request && resp.request.status === 0) {
-                msg = 'Oh no! App appears to be offline.';
-            }
-
-            this.setState({
-                errorMsg: msg
-            });
-        }
-        // on success ensure no error message
-
-    }, {
-        key: 'clearErrorMessage',
-        value: function clearErrorMessage() {
-            if (this.state.errorMsg) {
-                this.setState({
-                    errorMsg: ''
-                });
-            }
-        }
-    }, {
-        key: 'handleCurrencyChange',
-        value: function handleCurrencyChange(currentlyEditing, event) {
-            var _this2 = this;
-
-            var obj = {};
-            if (currentlyEditing === 'origin') {
-                obj.originCurrency = event.target.value;
-            } else {
-                obj.destinationCurrency = event.target.value;
-            }
-
-            // just change both...
-            // we have to use the callback so `this.state` will reflect the proper values
-            // when they are called in _makeConversionAjaxCall()
-            this.setState(obj, function () {
-                // get new dest amount & conversion rates
-                _this2.makeConversionAjaxCall({}, function (resp) {
-                    _this2.clearErrorMessage();
-
-                    _this2.setState({
-                        originAmount: resp.originAmount,
-                        // destinationAmount: resp.destAmount,
-                        destinationAmount: _this2.state.destinationAmount,
-                        conversionRate: resp.xRate
-                    });
-
-                    // get the new fee & total amount
-                    _this2.makeFeeAjaxCall({
-                        originAmount: resp.originAmount,
-                        originCurrency: _this2.state.originCurrency,
-                        destCurrency: _this2.state.destinationCurrency
-
-                    }, function (response) {
-                        _this2.setState({
-                            feeAmount: response.feeAmount
-                        });
-
-                        _this2.calcNewTotal();
-                    }, _this2.handleAjaxFailure);
-                });
-            });
-        }
-    }, {
-        key: 'handleOriginAmountChange',
-        value: function handleOriginAmountChange(event) {
-            var _this3 = this;
-
-            var newAmount = event.target.value;
-
-            // remove unallowed chars
-            newAmount = newAmount.replace(',', '');
-
-            // optimistic field updates
-            this.props.dispatch({ type: "CHANGE_ORIGIN_AMOUNT", data: { newAmount: newAmount } });
-            // this.setState({originAmount: newAmount});
-
-            // get the new dest amount
-            this.makeConversionAjaxCall({
-                currentlyEditing: 'origin',
-                newValue: newAmount
-
-            }, function (resp) {
-                _this3.clearErrorMessage();
-
-                _this3.setState({
-                    conversionRate: resp.xRate,
-                    destinationAmount: resp.destAmount
-                });
-            }, this.handleAjaxFailure);
-
-            // get the new fee & total amount
-            this.makeFeeAjaxCall({
-                originAmount: newAmount,
-                originCurrency: this.state.originCurrency,
-                destCurrency: this.state.destinationCurrency
-
-            }, function (resp) {
-                _this3.setState({
-                    feeAmount: resp.feeAmount
-                });
-
-                _this3.calcNewTotal();
-            });
-        }
-    }, {
-        key: 'handleDestAmountChange',
-        value: function handleDestAmountChange(event) {
-            var _this4 = this;
-
-            var newAmount = event.target.value;
-
-            // remove unallowed chars
-            newAmount = newAmount.replace(',', '');
-            // optimistic update
-            this.setState({ destinationAmount: newAmount });
-
-            this.makeConversionAjaxCall({
-                currentlyEditing: 'dest',
-                newValue: newAmount
-
-            }, function (resp) {
-                // make ajax call to get the fee amount..
-                var newState = {
-                    conversionRate: resp.xRate,
-                    originAmount: resp.originAmount
-                };
-
-                _this4.setState(newState);
-
-                // get the new fee & total amount
-                _this4.makeFeeAjaxCall({
-                    originAmount: resp.originAmount,
-                    originCurrency: _this4.state.originCurrency,
-                    destCurrency: _this4.state.destinationCurrency
-
-                }, function (resp) {
-                    _this4.setState({
-                        feeAmount: resp.feeAmount
-                    });
-
-                    _this4.calcNewTotal();
-                }, _this4.handleAjaxFailure);
-            });
-        }
-        // this is debounced in `componentDidMount()` as this.makeConversionAjaxCall()
-
-    }, {
-        key: '_makeConversionAjaxCall',
-        value: function _makeConversionAjaxCall(data, successCallback, failureCallback) {
-            var originCurrency = this.state.originCurrency;
-            var destCurrency = this.state.destinationCurrency;
-
-            var payload = {
-                originAmount: data.newValue || this.props.originAmount,
-                destAmount: data.newValue || this.state.destAmount,
-                originCurrency: originCurrency,
-                destCurrency: destCurrency,
-                calcOriginAmount: false
-
-                // determine whether we need to calc origin or dest amount
-            };if (data.currentlyEditing === 'dest') {
-                payload.calcOriginAmount = true;
-            }
-
-            // ajax call for destination amount
-            // originCurrency, destCurrency, originAmount
-            _axios2.default.get('/api/conversion', {
-                params: payload
-            }).then(function (resp) {
-                successCallback(resp.data);
-            }).catch(failureCallback);
-        }
-        // this is debounced in `componentDidMount()`
-
-    }, {
-        key: '_makeFeeAjaxCall',
-        value: function _makeFeeAjaxCall(payload, successCallback, failureCallback) {
-            _axios2.default.get('/api/fees', {
-                params: payload
-            }).then(function (resp) {
-                successCallback(resp.data);
-            }).catch(failureCallback);
-        }
-    }, {
-        key: 'calcNewTotal',
-        value: function calcNewTotal() {
-            var newTotal = parseFloat(this.props.originAmount, 10) + parseFloat(this.state.feeAmount, 10);
-            this.setState({ totalCost: parseFloat(newTotal) });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this5 = this;
-
-            if (this.state.errorMsg) {
-                var errorMsg = _react2.default.createElement(
-                    'div',
-                    { className: 'errorMsg' },
-                    this.state.errorMsg
-                );
-            }
-
-            return _react2.default.createElement(
-                'div',
-                null,
-                errorMsg,
-                _react2.default.createElement(
-                    'label',
-                    null,
-                    'Convert'
-                ),
-                '\xA0',
-                _react2.default.createElement('input', { className: 'amount-field', ref: function ref(input) {
-                        return _this5.originAmountInput = input;
-                    }, onChange: this.handleOriginAmountChange, value: this.props.originAmount }),
-                _react2.default.createElement(
-                    'select',
-                    { value: this.state.originCurrency, onChange: this.handleOriginCurrencyChange },
-                    _react2.default.createElement(
-                        'option',
-                        { value: 'USD' },
-                        'USD'
-                    ),
-                    _react2.default.createElement(
-                        'option',
-                        { value: 'EUR' },
-                        'EUR'
-                    ),
-                    _react2.default.createElement(
-                        'option',
-                        { value: 'JPY' },
-                        'JPY'
-                    )
-                ),
-                'to ',
-                _react2.default.createElement('input', { className: 'amount-field', onChange: this.handleDestAmountChange, value: this.state.destinationAmount }),
-                '\xA0',
-                _react2.default.createElement(
-                    'select',
-                    { value: this.state.destinationCurrency, onChange: this.handleDestCurrencyChange },
-                    _react2.default.createElement(
-                        'option',
-                        { value: 'USD' },
-                        'USD'
-                    ),
-                    _react2.default.createElement(
-                        'option',
-                        { value: 'EUR' },
-                        'EUR'
-                    ),
-                    _react2.default.createElement(
-                        'option',
-                        { value: 'JPY' },
-                        'JPY'
-                    )
-                ),
-                _react2.default.createElement('br', null),
-                _react2.default.createElement('br', null),
-                _react2.default.createElement('br', null),
-                _react2.default.createElement(_FeesTable2.default, {
-                    originCurrency: this.state.originCurrency,
-                    destinationCurrency: this.state.destinationCurrency,
-                    conversionRate: this.state.conversionRate,
-                    fee: this.state.feeAmount,
-                    total: this.state.totalCost
-                })
-            );
-        }
-    }]);
-
-    return Conversion;
-}(_react2.default.Component);
-
-exports.default = (0, _reactRedux.connect)(function (state, props) {
-    return {
-        originAmount: state.originAmount
-    };
-})(Conversion);
-
-/***/ }),
-/* 110 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _redux = __webpack_require__(33);
-
-var defaultState = {
-    originAmount: '0.00'
-};
-
-function amount() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
-    var action = arguments[1];
-
-    console.log('state', state);
-    if (action.type === 'CHANGE_ORIGIN_AMOUNT') {
-        return _extends({}, state, {
-            originAmount: action.data.newAmount
-        });
-    }
-
-    return state;
-}
-
-var store = (0, _redux.createStore)(amount);
-
-exports.default = store;
 
 /***/ })
 /******/ ]);
