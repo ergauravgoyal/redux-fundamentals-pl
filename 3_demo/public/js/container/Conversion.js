@@ -10,10 +10,10 @@ class Conversion extends React.Component {
     this.state = {
       // originAmount: '0.00',
       originCurrency: "USD",
-      destinationAmount: "0.00",
+      //destinationAmount: "0.00",
       destinationCurrency: "EUR",
       feeAmount: 0.0,
-      conversionRate: 1.5,
+      //conversionRate: 1.5,
       totalCost: 0.0,
       errorMsg: ""
     };
@@ -116,22 +116,32 @@ class Conversion extends React.Component {
     //optimistic field updates
     // this.setState({originAmount: newAmount});
 
-    // get the new dest amount
-    this.makeConversionAjaxCall(
-      {
+    // this.props.dispatch(function(dispatch) {
+    //   dispatch({ type: "SOME_ACTION", data: "someData" });
+    //   setTimeout(function() {
+    //     dispatch({ type: "CHANGE_ORIGIN_AMOUNT", data: { newAmount: "5000" } });
+    //   }, 3000);
+    // });
+    this.props.dispatch(dispatch => {
+      var payload = {
         currentlyEditing: "origin",
         newValue: newAmount
-      },
-      resp => {
-        this.clearErrorMessage();
-
-        this.setState({
-          conversionRate: resp.xRate,
-          destinationAmount: resp.destAmount
-        });
-      },
-      this.handleAjaxFailure
-    );
+      };
+      dispatch({ type: "REQUEST_CONVERSION_RATE", data: payload });
+      // get the new dest amount
+      this.makeConversionAjaxCall(
+        payload,
+        resp => {
+          this.clearErrorMessage();
+          dispatch({ type: "RECEIVED_CONVERSION_RATE", data: resp });
+          // this.setState({
+          //   conversionRate: resp.xRate,
+          //   destinationAmount: resp.destAmount
+          // });
+        },
+        this.handleAjaxFailure
+      );
+    });
 
     // get the new fee & total amount
     this.makeFeeAjaxCall(
@@ -293,6 +303,8 @@ class Conversion extends React.Component {
 
 export default connect((state, props) => {
   return {
-    originAmount: state.originAmount
+    originAmount: state.originAmount,
+    destinationAmount: state.destinationAmount,
+    conversionRate: state.conversionRate
   };
 })(Conversion);
