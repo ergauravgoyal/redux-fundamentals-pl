@@ -8,13 +8,13 @@ import Conversion from './containers/conversion.js';
 
 
 class MainComponent extends React.Component {
-  render() {
-    return (
-      <div>
-        <Conversion />
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div>
+                <Conversion />
+            </div>
+        )
+    }
 }
 
 

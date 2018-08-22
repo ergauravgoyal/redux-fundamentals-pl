@@ -2893,32 +2893,32 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var MainComponent = function (_React$Component) {
-  _inherits(MainComponent, _React$Component);
+    _inherits(MainComponent, _React$Component);
 
-  function MainComponent() {
-    _classCallCheck(this, MainComponent);
+    function MainComponent() {
+        _classCallCheck(this, MainComponent);
 
-    return _possibleConstructorReturn(this, (MainComponent.__proto__ || Object.getPrototypeOf(MainComponent)).apply(this, arguments));
-  }
-
-  _createClass(MainComponent, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(_conversion2.default, null)
-      );
+        return _possibleConstructorReturn(this, (MainComponent.__proto__ || Object.getPrototypeOf(MainComponent)).apply(this, arguments));
     }
-  }]);
 
-  return MainComponent;
+    _createClass(MainComponent, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(_conversion2.default, null)
+            );
+        }
+    }]);
+
+    return MainComponent;
 }(_react2.default.Component);
 
 _reactDom2.default.render(_react2.default.createElement(
-  _reactRedux.Provider,
-  { store: _configureStore2.default },
-  _react2.default.createElement(MainComponent, null)
+    _reactRedux.Provider,
+    { store: _configureStore2.default },
+    _react2.default.createElement(MainComponent, null)
 ), document.getElementById('container'));
 
 /***/ }),

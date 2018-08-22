@@ -16,4 +16,3 @@ You can check the readme at https://github.com/jamischarles/ps_redux-demos for a
 After recording, I added the following line to `webpack.config.js` to enable source maps. This makes debugging in chrome devtools
 much easier.
 `devtool: "source-map",`
-
