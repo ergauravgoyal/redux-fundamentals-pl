@@ -12,7 +12,8 @@
     "debug": "^2.2.0",
     "ejs": "~2.3.3",
     "express": "~4.13.1",
-    "morgan": "^1.7.0"
+    "morgan": "^1.7.0",
+    "react-logger": "^1.1.0"
   },
   "devDependencies": {
     "axios": "^0.16.2",
@@ -27,8 +28,10 @@
     "prop-types": "15.5.8",
     "react": "16.0.0",
     "react-dom": "16.0.0",
-    "react-redux": "5.0.6",
+    "react-redux": "^5.0.6",
     "redux": "3.6.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "webpack": "2.4.1"
   }
 }
